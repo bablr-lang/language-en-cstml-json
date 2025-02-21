@@ -24,7 +24,7 @@
     "@bablr/agast-helpers": "0.6.0",
     "@bablr/agast-vm-helpers": "0.6.0",
     "@bablr/helpers": "0.21.1",
-    "@bablr/language-en-json": "github:bablr-lang/language-en-json#0ffd3a0fa32a2505b8143f45c2f9331b391acaf5"
+    "@bablr/language-en-json": "0.9.0"
   },
   "devDependencies": {
     "@bablr/macrome": "^0.1.3",
