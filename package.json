@@ -1,0 +1,51 @@
+{
+  "name": "@bablr/language-en-cstml-json",
+  "version": "0.0.0",
+  "description": "A BABLR language for CSTML-style JSON",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./lib/grammar.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**/*.js"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "macrome build",
+    "watch": "macrome watch",
+    "clean": "macrome clean"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.22.15",
+    "@bablr/agast-helpers": "0.6.0",
+    "@bablr/agast-vm-helpers": "0.6.0",
+    "@bablr/helpers": "0.21.1",
+    "@bablr/language-en-json": "github:bablr-lang/language-en-json#0ffd3a0fa32a2505b8143f45c2f9331b391acaf5"
+  },
+  "devDependencies": {
+    "@bablr/macrome": "^0.1.3",
+    "@bablr/macrome-generator-bablr": "^0.3.2",
+    "@bablr/boot": "^0.7.0",
+    "@bablr/eslint-config-base": "github:bablr-lang/eslint-config-base#49f5952efed27f94ee9b94340eb1563c440bf64e",
+    "enhanced-resolve": "^5.12.0",
+    "eslint": "^8.47.0",
+    "eslint-import-resolver-enhanced-resolve": "^1.0.5",
+    "eslint-plugin-import": "^2.27.5",
+    "prettier": "^2.0.5"
+  },
+  "keywords": [
+    "bablr-language",
+    "grammar",
+    "english",
+    "comment",
+    "c"
+  ],
+  "repository": "git@github.com:bablr-lang/language-en-cstml-json.git",
+  "homepage": "https://github.com/bablr-lang/language-en-cstml-json",
+  "author": "Conrad Buck <conartist6@gmail.com>",
+  "license": "MIT"
+}
