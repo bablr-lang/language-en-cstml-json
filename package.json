@@ -17,7 +17,8 @@
   "scripts": {
     "build": "macrome build",
     "watch": "macrome watch",
-    "clean": "macrome clean"
+    "clean": "macrome clean",
+    "test": "mocha"
   },
   "dependencies": {
     "@babel/runtime": "^7.22.15",
