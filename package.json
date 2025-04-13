@@ -45,8 +45,7 @@
     "bablr-language",
     "grammar",
     "english",
-    "comment",
-    "c"
+    "json"
   ],
   "repository": "git@github.com:bablr-lang/language-en-cstml-json.git",
   "homepage": "https://github.com/bablr-lang/language-en-cstml-json",
