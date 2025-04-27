@@ -13,7 +13,7 @@ const buildJSONTag = (matcher) => {
 };
 
 const print = (tree) => {
-  return printPrettyCSTML(tree, { ctx });
+  return printPrettyCSTML(tree.node, { ctx });
 };
 
 describe('@bablr/language-en-cstml-json', () => {
