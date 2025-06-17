@@ -15,7 +15,7 @@ const print = (tree) => {
 
 describe('@bablr/language-en-cstml-json', () => {
   describe('Expression', () => {
-    const json = buildJSONTag(spam`<$__Expression />`);
+    const json = buildJSONTag(spam`<$_Expression />`);
 
     it(`\`'"'\``, () => {
       expect(print(json`'"'`)).toEqual(dedent`\
