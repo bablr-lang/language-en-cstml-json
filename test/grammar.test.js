@@ -37,7 +37,7 @@ describe('@bablr/language-en-cstml-json', () => {
           .:
           <$Object>
             openToken: <*Punctuator '{' { balanced: '}' } />
-            separatorTokens[]: []
+            #separatorTokens[]: []
             properties[]$: []
             properties[]$:
             <$Property>
@@ -65,7 +65,7 @@ describe('@bablr/language-en-cstml-json', () => {
           .:
           <$Object>
             openToken: <*Punctuator '{' { balanced: '}' } />
-            separatorTokens[]: []
+            #separatorTokens[]: []
             properties[]$: []
             properties[]$:
             <$Property>
