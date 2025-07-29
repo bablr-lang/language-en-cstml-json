@@ -19,7 +19,6 @@ describe('@bablr/language-en-cstml-json', () => {
 
     it(`\`'"'\``, () => {
       expect(print(json`'"'`)).toEqual(dedent`\
-        <!0:cstml { bablrLanguage: 'https://bablr.org/languages/core/en/cstml-json' }>
         <$_>
           .:
           <$String>
@@ -32,7 +31,6 @@ describe('@bablr/language-en-cstml-json', () => {
 
     it('`{foo:null}`', () => {
       expect(print(json`{foo:null}`)).toEqual(dedent`\
-        <!0:cstml { bablrLanguage: 'https://bablr.org/languages/core/en/cstml-json' }>
         <$_>
           .:
           <$Object>
@@ -60,7 +58,6 @@ describe('@bablr/language-en-cstml-json', () => {
 
     it('`{"foo":null}`', () => {
       expect(print(json`{"foo":null}`)).toEqual(dedent`\
-        <!0:cstml { bablrLanguage: 'https://bablr.org/languages/core/en/cstml-json' }>
         <$_>
           .:
           <$Object>
