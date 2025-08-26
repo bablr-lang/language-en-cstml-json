@@ -22,9 +22,9 @@ describe('@bablr/language-en-cstml-json', () => {
         <$_>
           .:
           <$String>
-            openToken: <*Punctuator "'" { balanced: "'", balancedSpan: 'String:Single' } />
+            openToken: <* "'" { balanced: "'", balancedSpan: 'String:Single' } />
             content$: <*StringContent '"' />
-            closeToken: <*Punctuator "'" { balancer: true } />
+            closeToken: <* "'" { balancer: true } />
           </>
         </>\n`);
     });
@@ -34,7 +34,7 @@ describe('@bablr/language-en-cstml-json', () => {
         <$_>
           .:
           <$Object>
-            openToken: <*Punctuator '{' { balanced: '}' } />
+            openToken: <* '{' { balanced: '}' } />
             #separatorTokens[]: []
             properties[]$: []
             properties[]$:
@@ -45,13 +45,13 @@ describe('@bablr/language-en-cstml-json', () => {
                 content: <*IdentifierContent 'foo' { span: 'Identifier' } />
                 closeToken: null
               </>
-              sigilToken: <*Punctuator ':' />
+              sigilToken: <* ':' />
               value+$:
               <$Null>
                 sigilToken: <*Keyword 'null' />
               </>
             </>
-            closeToken: <*Punctuator '}' { balancer: true } />
+            closeToken: <* '}' { balancer: true } />
           </>
         </>\n`);
     });
@@ -61,24 +61,24 @@ describe('@bablr/language-en-cstml-json', () => {
         <$_>
           .:
           <$Object>
-            openToken: <*Punctuator '{' { balanced: '}' } />
+            openToken: <* '{' { balanced: '}' } />
             #separatorTokens[]: []
             properties[]$: []
             properties[]$:
             <$Property>
               key$:
               <$String>
-                openToken: <*Punctuator '"' { balanced: '"', balancedSpan: 'String:Double' } />
+                openToken: <* '"' { balanced: '"', balancedSpan: 'String:Double' } />
                 content$: <*StringContent 'foo' />
-                closeToken: <*Punctuator '"' { balancer: true } />
+                closeToken: <* '"' { balancer: true } />
               </>
-              sigilToken: <*Punctuator ':' />
+              sigilToken: <* ':' />
               value+$:
               <$Null>
                 sigilToken: <*Keyword 'null' />
               </>
             </>
-            closeToken: <*Punctuator '}' { balancer: true } />
+            closeToken: <* '}' { balancer: true } />
           </>
         </>\n`);
     });
