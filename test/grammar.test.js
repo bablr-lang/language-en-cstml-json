@@ -35,8 +35,6 @@ describe('@bablr/language-en-cstml-json', () => {
           .:
           <$Object>
             openToken: <* '{' { balanced: '}' } />
-            #separatorTokens[]: []
-            properties[]$: []
             properties[]$:
             <$Property>
               key$:
@@ -62,8 +60,6 @@ describe('@bablr/language-en-cstml-json', () => {
           .:
           <$Object>
             openToken: <* '{' { balanced: '}' } />
-            #separatorTokens[]: []
-            properties[]$: []
             properties[]$:
             <$Property>
               key$:
