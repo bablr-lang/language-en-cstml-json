@@ -19,63 +19,54 @@ describe('@bablr/language-en-cstml-json', () => {
 
     it(`\`'"'\``, () => {
       expect(print(json`'"'`)).toEqual(dedent`\
-        <$_>
-          .:
-          <$String>
-            openToken: <* "'" { balanced: "'", balancedSpan: 'String:Single' } />
-            content$: <*StringContent '"' />
-            closeToken: <* "'" { balancer: true } />
-          </>
+        <$String>
+          openToken: <* "'" { balanced: "'", balancedSpan: 'String:Single' } />
+          content$: <*StringContent '"' />
+          closeToken: <* "'" { balancer: true } />
         </>\n`);
     });
 
     it('`{foo:null}`', () => {
       expect(print(json`{foo:null}`)).toEqual(dedent`\
-        <$_>
-          .:
-          <$Object>
-            openToken: <* '{' { balanced: '}' } />
-            properties[]$:
-            <$Property>
-              key$:
-              <$Identifier>
-                openToken: null
-                content: <*IdentifierContent 'foo' { span: 'Identifier' } />
-                closeToken: null
-              </>
-              sigilToken: <* ':' />
-              value+$:
-              <$Null>
-                sigilToken: <*Keyword 'null' />
-              </>
+        <$Object>
+          openToken: <* '{' { balanced: '}' } />
+          properties[]$:
+          <$Property>
+            key$:
+            <$Identifier>
+              openToken: null
+              content: <*IdentifierContent 'foo' { span: 'Identifier' } />
+              closeToken: null
             </>
-            closeToken: <* '}' { balancer: true } />
+            sigilToken: <* ':' />
+            value+$:
+            <$Null>
+              sigilToken: <*Keyword 'null' />
+            </>
           </>
+          closeToken: <* '}' { balancer: true } />
         </>\n`);
     });
 
     it('`{"foo":null}`', () => {
       expect(print(json`{"foo":null}`)).toEqual(dedent`\
-        <$_>
-          .:
-          <$Object>
-            openToken: <* '{' { balanced: '}' } />
-            properties[]$:
-            <$Property>
-              key$:
-              <$String>
-                openToken: <* '"' { balanced: '"', balancedSpan: 'String:Double' } />
-                content$: <*StringContent 'foo' />
-                closeToken: <* '"' { balancer: true } />
-              </>
-              sigilToken: <* ':' />
-              value+$:
-              <$Null>
-                sigilToken: <*Keyword 'null' />
-              </>
+        <$Object>
+          openToken: <* '{' { balanced: '}' } />
+          properties[]$:
+          <$Property>
+            key$:
+            <$String>
+              openToken: <* '"' { balanced: '"', balancedSpan: 'String:Double' } />
+              content$: <*StringContent 'foo' />
+              closeToken: <* '"' { balancer: true } />
             </>
-            closeToken: <* '}' { balancer: true } />
+            sigilToken: <* ':' />
+            value+$:
+            <$Null>
+              sigilToken: <*Keyword 'null' />
+            </>
           </>
+          closeToken: <* '}' { balancer: true } />
         </>\n`);
     });
   });
