@@ -20,53 +20,53 @@ describe('@bablr/language-en-cstml-json', () => {
     it(`\`'"'\``, () => {
       expect(print(json`'"'`)).toEqual(dedent`\
         <$String>
-          openToken: <* "'" { balanced: "'", balancedSpan: 'String:Single' } />
-          content$: <*StringContent '"' />
-          closeToken: <* "'" { balancer: true } />
+          openToken*: <* "'" { balanced: "'", balancedSpan: 'String:Single' } />
+          content: <*StringContent '"' />
+          closeToken*: <* "'" { balancer: true } />
         </>\n`);
     });
 
     it('`{foo:null}`', () => {
       expect(print(json`{foo:null}`)).toEqual(dedent`\
         <$Object>
-          openToken: <* '{' { balanced: '}' } />
-          properties[]$:
+          openToken*: <* '{' { balanced: '}' } />
+          properties[]:
           <$Property>
-            key$:
+            key:
             <$Identifier>
-              openToken: null
-              content: <*IdentifierContent 'foo' { span: 'Identifier' } />
-              closeToken: null
+              openToken*: null
+              content*: <*IdentifierContent 'foo' { span: 'Identifier' } />
+              closeToken*: null
             </>
-            sigilToken: <* ':' />
-            value+$:
+            sigilToken*: <* ':' />
+            value+:
             <$Null>
-              sigilToken: <*Keyword 'null' />
+              sigilToken*: <*Keyword 'null' />
             </>
           </>
-          closeToken: <* '}' { balancer: true } />
+          closeToken*: <* '}' { balancer: true } />
         </>\n`);
     });
 
     it('`{"foo":null}`', () => {
       expect(print(json`{"foo":null}`)).toEqual(dedent`\
         <$Object>
-          openToken: <* '{' { balanced: '}' } />
-          properties[]$:
+          openToken*: <* '{' { balanced: '}' } />
+          properties[]:
           <$Property>
-            key$:
+            key:
             <$String>
-              openToken: <* '"' { balanced: '"', balancedSpan: 'String:Double' } />
-              content$: <*StringContent 'foo' />
-              closeToken: <* '"' { balancer: true } />
+              openToken*: <* '"' { balanced: '"', balancedSpan: 'String:Double' } />
+              content: <*StringContent 'foo' />
+              closeToken*: <* '"' { balancer: true } />
             </>
-            sigilToken: <* ':' />
-            value+$:
+            sigilToken*: <* ':' />
+            value+:
             <$Null>
-              sigilToken: <*Keyword 'null' />
+              sigilToken*: <*Keyword 'null' />
             </>
           </>
-          closeToken: <* '}' { balancer: true } />
+          closeToken*: <* '}' { balancer: true } />
         </>\n`);
     });
   });
