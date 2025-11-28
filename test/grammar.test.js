@@ -20,23 +20,21 @@ describe('@bablr/language-en-cstml-json', () => {
     it(`\`'"'\``, () => {
       expect(print(json`'"'`)).toEqual(dedent`\
         <$String>
-          openToken*: <* "'" { balanced: "'", balancedSpan: 'String:Single' } />
+          openToken*: <* "'" />
           content: <*StringContent '"' />
-          closeToken*: <* "'" { balancer: true } />
+          closeToken*: <* "'" />
         </>\n`);
     });
 
     it('`{foo:null}`', () => {
       expect(print(json`{foo:null}`)).toEqual(dedent`\
         <$Object>
-          openToken*: <* '{' { balanced: '}' } />
+          openToken*: <* '{' />
           properties[]:
           <$Property>
             key:
             <$Identifier>
-              openToken*: null
-              content*: <*IdentifierContent 'foo' { span: 'Identifier' } />
-              closeToken*: null
+              content*: <*IdentifierContent 'foo' />
             </>
             sigilToken*: <* ':' />
             value+:
@@ -44,21 +42,21 @@ describe('@bablr/language-en-cstml-json', () => {
               sigilToken*: <*Keyword 'null' />
             </>
           </>
-          closeToken*: <* '}' { balancer: true } />
+          closeToken*: <* '}' />
         </>\n`);
     });
 
     it('`{"foo":null}`', () => {
       expect(print(json`{"foo":null}`)).toEqual(dedent`\
         <$Object>
-          openToken*: <* '{' { balanced: '}' } />
+          openToken*: <* '{' />
           properties[]:
           <$Property>
             key:
             <$String>
-              openToken*: <* '"' { balanced: '"', balancedSpan: 'String:Double' } />
+              openToken*: <* '"' />
               content: <*StringContent 'foo' />
-              closeToken*: <* '"' { balancer: true } />
+              closeToken*: <* '"' />
             </>
             sigilToken*: <* ':' />
             value+:
@@ -66,7 +64,7 @@ describe('@bablr/language-en-cstml-json', () => {
               sigilToken*: <*Keyword 'null' />
             </>
           </>
-          closeToken*: <* '}' { balancer: true } />
+          closeToken*: <* '}' />
         </>\n`);
     });
   });
