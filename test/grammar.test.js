@@ -21,7 +21,7 @@ describe('@bablr/language-en-cstml-json', () => {
       expect(print(json`'"'`)).toEqual(dedent`\
         <$String>
           openToken*: <* "'" />
-          content: <*StringContent '"' />
+          content$: <*StringContent '"' />
           closeToken*: <* "'" />
         </>\n`);
     });
@@ -30,14 +30,14 @@ describe('@bablr/language-en-cstml-json', () => {
       expect(print(json`{foo:null}`)).toEqual(dedent`\
         <$Object>
           openToken*: <* '{' />
-          properties[]:
+          properties[]$:
           <$Property>
-            key:
+            key$:
             <$Identifier>
               content*: <*IdentifierContent 'foo' />
             </>
             sigilToken*: <* ':' />
-            value+:
+            value+$:
             <$Null>
               sigilToken*: <*Keyword 'null' />
             </>
@@ -50,16 +50,16 @@ describe('@bablr/language-en-cstml-json', () => {
       expect(print(json`{"foo":null}`)).toEqual(dedent`\
         <$Object>
           openToken*: <* '{' />
-          properties[]:
+          properties[]$:
           <$Property>
-            key:
+            key$:
             <$String>
               openToken*: <* '"' />
-              content: <*StringContent 'foo' />
+              content$: <*StringContent 'foo' />
               closeToken*: <* '"' />
             </>
             sigilToken*: <* ':' />
-            value+:
+            value+$:
             <$Null>
               sigilToken*: <*Keyword 'null' />
             </>
