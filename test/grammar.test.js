@@ -37,7 +37,7 @@ describe('@bablr/language-en-cstml-json', () => {
               content*: <*IdentifierContent 'foo' />
             </>
             sigilToken*: <* ':' />
-            value+$:
+            value$:
             <$Null>
               sigilToken*: <*Keyword 'null' />
             </>
@@ -59,7 +59,7 @@ describe('@bablr/language-en-cstml-json', () => {
               closeToken*: <* '"' />
             </>
             sigilToken*: <* ':' />
-            value+$:
+            value$:
             <$Null>
               sigilToken*: <*Keyword 'null' />
             </>
