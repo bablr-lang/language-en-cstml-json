@@ -1,6 +1,6 @@
 {
   "name": "@bablr/language-en-cstml-json",
-  "version": "0.0.0",
+  "version": "0.5.2",
   "description": "A BABLR language for CSTML-style JSON",
   "engines": {
     "node": ">=12.0.0"
