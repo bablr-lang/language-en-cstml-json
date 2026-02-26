@@ -19,52 +19,61 @@ describe('@bablr/language-en-cstml-json', () => {
 
     it(`\`'"'\``, () => {
       expect(print(json`'"'`)).toEqual(dedent`\
-        <$String>
-          openToken*: <* "'" />
-          content$: <*StringContent '"' />
-          closeToken*: <* "'" />
+        <$_>
+          _:
+          <$String>
+            openToken*: <* "'" />
+            content$: <*StringContent '"' />
+            closeToken*: <* "'" />
+          </>
         </>\n`);
     });
 
     it('`{foo:null}`', () => {
       expect(print(json`{foo:null}`)).toEqual(dedent`\
-        <$Object>
-          openToken*: <* '{' />
-          properties[]$:
-          <$Property>
-            key$:
-            <$Identifier>
-              content*: <*IdentifierContent 'foo' />
+        <$_>
+          _:
+          <$Object>
+            openToken*: <* '{' />
+            properties[]$:
+            <$Property>
+              key$:
+              <$Identifier>
+                content*: <*IdentifierContent 'foo' />
+              </>
+              sigilToken*: <* ':' />
+              value$:
+              <$Null>
+                sigilToken*: <*Keyword 'null' />
+              </>
             </>
-            sigilToken*: <* ':' />
-            value$:
-            <$Null>
-              sigilToken*: <*Keyword 'null' />
-            </>
+            closeToken*: <* '}' />
           </>
-          closeToken*: <* '}' />
         </>\n`);
     });
 
     it('`{"foo":null}`', () => {
       expect(print(json`{"foo":null}`)).toEqual(dedent`\
-        <$Object>
-          openToken*: <* '{' />
-          properties[]$:
-          <$Property>
-            key$:
-            <$String>
-              openToken*: <* '"' />
-              content$: <*StringContent 'foo' />
-              closeToken*: <* '"' />
+        <$_>
+          _:
+          <$Object>
+            openToken*: <* '{' />
+            properties[]$:
+            <$Property>
+              key$:
+              <$String>
+                openToken*: <* '"' />
+                content$: <*StringContent 'foo' />
+                closeToken*: <* '"' />
+              </>
+              sigilToken*: <* ':' />
+              value$:
+              <$Null>
+                sigilToken*: <*Keyword 'null' />
+              </>
             </>
-            sigilToken*: <* ':' />
-            value$:
-            <$Null>
-              sigilToken*: <*Keyword 'null' />
-            </>
+            closeToken*: <* '}' />
           </>
-          closeToken*: <* '}' />
         </>\n`);
     });
   });
