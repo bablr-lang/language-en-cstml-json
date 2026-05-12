@@ -26,7 +26,8 @@ describe('@bablr/language-en-cstml-json', () => {
             content$: <*StringContent '"' />
             closeToken*: <* "'" />
           </>
-        </>\n`);
+        </>
+      `);
     });
 
     it('`{foo:null}`', () => {
@@ -49,7 +50,8 @@ describe('@bablr/language-en-cstml-json', () => {
             </>
             closeToken*: <* '}' />
           </>
-        </>\n`);
+        </>
+      `);
     });
 
     it('`{"foo":null}`', () => {
@@ -74,7 +76,8 @@ describe('@bablr/language-en-cstml-json', () => {
             </>
             closeToken*: <* '}' />
           </>
-        </>\n`);
+        </>
+      `);
     });
   });
 });
