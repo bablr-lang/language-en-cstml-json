@@ -18,7 +18,7 @@ describe('@bablr/language-en-cstml-json', () => {
     const json = buildJSONTag(m`<$_Expression />`);
 
     it(`\`'"'\``, () => {
-      expect(print(json`'"'`)).toEqual(dedent`\
+      expect(print(json`'"'`)).toEqual(dedent`
         <$_>
           _:
           <$String>
@@ -30,7 +30,7 @@ describe('@bablr/language-en-cstml-json', () => {
     });
 
     it('`{foo:null}`', () => {
-      expect(print(json`{foo:null}`)).toEqual(dedent`\
+      expect(print(json`{foo:null}`)).toEqual(dedent`
         <$_>
           _:
           <$Object>
@@ -53,7 +53,7 @@ describe('@bablr/language-en-cstml-json', () => {
     });
 
     it('`{"foo":null}`', () => {
-      expect(print(json`{"foo":null}`)).toEqual(dedent`\
+      expect(print(json`{"foo":null}`)).toEqual(dedent`
         <$_>
           _:
           <$Object>
