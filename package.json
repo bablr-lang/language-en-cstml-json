@@ -18,13 +18,13 @@
     "test": "mocha"
   },
   "dependencies": {
-    "@bablr/agast-helpers": "0.10.10",
-    "@bablr/agast-vm-helpers": "0.10.5",
-    "@bablr/helpers": "0.25.5",
-    "@bablr/language-en-json": "0.13.4"
+    "@bablr/agast-helpers": "0.11.3",
+    "@bablr/agast-vm-helpers": "0.11.3",
+    "@bablr/helpers": "0.26.4",
+    "@bablr/language-en-json": "0.14.0"
   },
   "devDependencies": {
-    "bablr": "^0.11.11",
+    "bablr": "^0.12.3",
     "@bablr/eslint-config-base": "github:bablr-lang/eslint-config-base#23b94fb3bdfdbc3ac7ed9cb58d7979d8f07dce2b",
     "@qnighy/dedent": "0.1.1",
     "enhanced-resolve": "^5.12.0",
