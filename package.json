@@ -18,10 +18,10 @@
     "test": "mocha"
   },
   "dependencies": {
-    "@bablr/agast-helpers": "0.11.3",
-    "@bablr/agast-vm-helpers": "0.11.3",
-    "@bablr/helpers": "0.26.4",
-    "@bablr/language-en-json": "0.14.0"
+    "@bablr/agast-helpers": "0.11.4",
+    "@bablr/agast-vm-helpers": "0.11.4",
+    "@bablr/helpers": "0.26.5",
+    "@bablr/language-en-json": "0.14.1"
   },
   "devDependencies": {
     "bablr": "^0.12.3",
