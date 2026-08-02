@@ -15,13 +15,13 @@ const print = (tree) => {
 
 describe('@bablr/language-en-cstml-json', () => {
   describe('Expression', () => {
-    const json = buildJSONTag(m`<$_Expression />`);
+    const json = buildJSONTag(m`<_Expression />`);
 
     it(`\`'"'\``, () => {
       expect(print(json`'"'`)).toEqual(dedent`
-        <$_>
+        <_>
           _:
-          <$String>
+          <String>
             openToken*: <* "'" />
             content$: <*StringContent '"' />
             closeToken*: <* "'" />
@@ -32,19 +32,19 @@ describe('@bablr/language-en-cstml-json', () => {
 
     it('`{foo:null}`', () => {
       expect(print(json`{foo:null}`)).toEqual(dedent`
-        <$_>
+        <_>
           _:
-          <$Object>
+          <Object>
             openToken*: <* '{' />
             properties[]$:
-            <$Property>
+            <Property>
               key$:
-              <$Identifier>
+              <Identifier>
                 content*: <*IdentifierContent 'foo' />
               </>
               sigilToken*: <* ':' />
               value$:
-              <$Null>
+              <Null>
                 sigilToken*: <*Keyword 'null' />
               </>
             </>
@@ -56,21 +56,21 @@ describe('@bablr/language-en-cstml-json', () => {
 
     it('`{"foo":null}`', () => {
       expect(print(json`{"foo":null}`)).toEqual(dedent`
-        <$_>
+        <_>
           _:
-          <$Object>
+          <Object>
             openToken*: <* '{' />
             properties[]$:
-            <$Property>
+            <Property>
               key$:
-              <$String>
+              <String>
                 openToken*: <* '"' />
                 content$: <*StringContent 'foo' />
                 closeToken*: <* '"' />
               </>
               sigilToken*: <* ':' />
               value$:
-              <$Null>
+              <Null>
                 sigilToken*: <*Keyword 'null' />
               </>
             </>
